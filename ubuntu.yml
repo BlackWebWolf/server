@@ -1,0 +1,40 @@
+- name: Ubuntu dev machine
+  hosts: 127.0.0.1
+  connection: local
+  vars:
+    "composer_github_oauth_token": ""
+    "hostname": "Odin"
+    "downloadDir" : "/tmp/downloads"
+    "installDir": "/home/vagrant/installs"
+    "mysql_root_username": "vagrant"
+    "mysql_root_password": ""
+    "ohmyzsh_users": "vagrant"
+    "ohmyzsh_change_shell": true
+    "mysql_databases": [
+        {
+          name: "test"
+        },
+        {
+          name: "oro_crm"
+        }
+    ]
+    #   - name: example
+    #     collation: utf8_general_ci
+    #     encoding: utf8
+    #     replicate: 1
+    "mysql_users": [
+          {
+            name: example,
+            host: 127.0.0.1,
+            password: secret
+          }
+    ]
+  roles:
+      # - initial
+      # - ansible-role-git
+      # - system_essential
+      # - ansible-role-nginx
+      # - ansible-role-php
+      # - ansible-role-mysql
+      # - ansible-role-composer
+      - ansible-role-ohmyzsh

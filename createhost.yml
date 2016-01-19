@@ -1,0 +1,15 @@
+- name: Create host
+  hosts: 127.0.0.1
+  connection: local
+  vars:
+    "nginx_vhost_path": "/etc/nginx/sites-enabled"
+    "nginx_vhosts": [
+    # Example vhost below, showing all available options:
+        {
+          server_name: "oro-latest.dev", # default: N/A
+          root: "/var/www/oro_summit/web", # default: N/A
+          index: "app_dev.php" # default: "index.html index.htm"
+        }
+    ]
+  roles:
+     - ansible-role-createhost

@@ -1,0 +1,20 @@
+---
+- name: ensure system packages are installed
+  apt: pkg="{{ item }}" state=latest
+  with_items:
+    - curl
+    - wget
+    - libpq-dev
+    - build-essential
+    - gcc
+    - openssl
+    - dconf-tools
+    - python-software-properties
+    - python-apt
+    - python-mysqldb
+    - python-psycopg2
+    - vim
+    - python-pip
+    - terminator
+  sudo: yes
+- include: zsh.yml

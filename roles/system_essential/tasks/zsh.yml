@@ -1,0 +1,7 @@
+---
+- name: Ensure ZSH installed
+  apt: pkg=zsh state=latest
+  sudo: yes
+
+# - name: Get ZSH
+  # command: chdir=/tmp curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > install.sh
